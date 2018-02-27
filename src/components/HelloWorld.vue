@@ -84,12 +84,25 @@
 </template>
 
 <script>
+import dataForge from 'data-forge';
+
 export default {
   name: 'HelloWorld',
   data() {
     return {
       msg: 'Welcome to Your Vue.js App',
     };
+  },
+  mounted() {
+    const dataFrame = new dataForge.DataFrame({
+      columnNames: ['Col1'],
+      values: [
+        [1],
+        [5],
+        [10],
+      ],
+    });
+    console.log(dataFrame);
   },
 };
 </script>
